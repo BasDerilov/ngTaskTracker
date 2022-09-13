@@ -1,0 +1,9 @@
+<div class="container-fluid container mt-5">
+  <div class="row">
+    <app-task
+      *ngFor="let task of tasks"
+      [task]="task"
+      class="col-lg-4"
+    ></app-task>
+  </div>
+</div>

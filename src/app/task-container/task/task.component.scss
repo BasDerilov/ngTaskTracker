@@ -1,0 +1,10 @@
+@import "/src/scss/styles.scss";
+
+.completed {
+  h3,
+  p {
+    text-decoration: line-through;
+    text-decoration-color: $danger;
+    color: gray;
+  }
+}

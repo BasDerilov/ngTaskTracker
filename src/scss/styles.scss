@@ -1,0 +1,18 @@
+@import "./theme-colors";
+
+$theme-colors: (
+  primary: $celeste,
+  secondary: $gunmetal,
+  success: $celeste,
+  info: $celeste,
+  warning: $rajah,
+  danger: $red-salsa,
+  light: $lavander-blush,
+  dark: $gunmetal,
+);
+
+$body-bg: $celeste;
+$body-color: $lavander-blush;
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+//Figuring this out took too long...

@@ -1,0 +1,90 @@
+<div>
+  <div class="modal-header bg-dark text-primary">
+    <h4 class="modal-title">Task Creator</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="HideTaskCreator()"
+    ></button>
+  </div>
+  <div class="modal-body bg-dark text-primary">
+    <div class="mb-3">
+      <label for="creatorTaskName" class="form-label">To do name</label>
+      <input
+        [(ngModel)]="task.title"
+        type="text"
+        class="form-control text-dark"
+        name="creatorTaskName"
+        id="creatorTaskName"
+        aria-describedby="taskNameHelp"
+        placeholder="some task"
+      />
+      <small id="taskNameHelp" class="form-text text-muted"
+        >enter a descriptive name for your task</small
+      >
+    </div>
+    <div class="mb-3">
+      <label for="creatorTaskDescription" class="form-label"
+        >Task description</label
+      >
+      <textarea
+        [(ngModel)]="task.taskContent"
+        class="form-control text-dark"
+        name="creatorTaskDescription"
+        id="creatorTaskDescription"
+        rows="5"
+      ></textarea>
+    </div>
+    <div><label for="creatorImportance">Choose task importance</label></div>
+    <div class="form-check form-check-inline">
+      <input
+        [(ngModel)]="task.importance"
+        class="form-check-input"
+        type="radio"
+        name="cratorImportance"
+        id="low"
+        value="low"
+      />
+      <label class="form-check-label" for="low">low</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        [(ngModel)]="task.importance"
+        class="form-check-input"
+        type="radio"
+        name="cratorImportance"
+        id="medium"
+        value="medium"
+        checked
+      />
+      <label class="form-check-label" for="medium">medium</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input
+        [(ngModel)]="task.importance"
+        class="form-check-input"
+        type="radio"
+        name="cratorImportance"
+        id="high"
+        value="high"
+      />
+      <label class="form-check-label" for="high">high</label>
+    </div>
+  </div>
+  <div class="modal-footer bg-dark d-flex justify-content-between">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="CreateNewTask(task.title, task.taskContent, task.importance)"
+    >
+      Create</button
+    ><button
+      type="button"
+      class="btn btn-outline-danger"
+      (click)="HideTaskCreator()"
+    >
+      Close
+    </button>
+  </div>
+</div>

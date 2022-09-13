@@ -1,0 +1,37 @@
+<div class="card bg-dark">
+  <div class="card-body" [ngClass]="{ completed: task.completed }">
+    <h3 class="card-title">{{ task.title }}</h3>
+    <small class="form-text text-muted"
+      >created on: {{ task.creationDate.toLocaleDateString() }} at
+      {{ task.creationDate.toLocaleTimeString() }}</small
+    >
+    <hr />
+    <p class="card-text">{{ task.taskContent }}</p>
+    <hr />
+    <span>priority: {{ task.importance }}</span>
+    <div class="d-flex justify-content-between mt-3">
+      <button
+        *ngIf="task.completed"
+        type="button"
+        (click)="onUndo()"
+        class="btn btn-outline-primary"
+      >
+        Undo
+      </button>
+      <button
+        *ngIf="!task.completed"
+        type="button"
+        (click)="onComplete()"
+        class="btn btn-outline-primary"
+      >
+        Complete</button
+      ><button
+        type="button"
+        (click)="onDeleteSelf()"
+        class="btn btn-outline-danger"
+      >
+        Delete
+      </button>
+    </div>
+  </div>
+</div>
